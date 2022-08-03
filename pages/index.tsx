@@ -12,10 +12,9 @@ type UnwrapPromise<T> = T extends Promise<infer U> ? U : T;
 type IndexProps = UnwrapPromise<ReturnType<typeof getStaticProps>>["props"];
 
 function Index({ services, categories }: IndexProps) {
-  console.log({ services, categories });
   return (
     <main>
-      <Home />
+      <Home services={services} />
     </main>
   );
 }
